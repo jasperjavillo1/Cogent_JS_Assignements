@@ -1,0 +1,259 @@
+function removeCharacter(s,c)
+{
+    s.replace(c,"");
+    return s;
+}
+
+function countCharacter(s,c)
+{
+    let array = s.split("");
+    let count = 0;
+    for(let x of array)
+    {
+        if(x == c)
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
+function isAnagram(s1,s2)
+{
+    let result = true;
+    if(s1.length = s2.length)
+    {
+        for(let i = 0; i < s1.length; i++ )
+        {
+            if(s2.includes(s1.charAt(i)))
+            {
+                if(countCharacter(s1,s1.charAt(i)) != countCharacter(s2.s1.charAt(i)))
+                {
+                    result = false;
+                    break;
+                }
+            }
+            else
+            {
+                result = false;
+                break;
+            }
+        }
+    }
+    else
+    {
+        result = false;
+    }
+    return result;
+}
+
+function isPalandrome(s)
+{
+    let result = true;
+    let j = -1;
+    for(let i = 0; i < s.length; i++)
+    {
+        if(s.charAt(i) == s.charAt(j))
+        {
+            j--;
+        }
+        else
+        {
+            result = false;
+            break;
+        }
+    }
+    return result;
+}
+
+function isLetter(c)
+{
+    return c.toLowerCase() != c.toUpperCase();
+}
+
+function isNumber(c)
+{
+    let result = true;
+    switch(c)
+    {
+    case "0":
+        break;
+    case "1":
+        break;
+    case "2":
+        break;
+    case "3":
+        break;
+    case "4":
+        break;
+    case "5":
+        break;
+    case "6":
+        break;
+    case "7":
+        break;
+    case "8":
+        break;
+    case "9":
+        break;
+    default:
+        result = false;
+    }
+    return result;
+}
+
+function isVowel(c)
+{
+    let result = true;
+    switch(c)
+    {
+    case "a":
+        break;
+    case "e":
+        break;
+    case "i":
+        break;
+    case "o":
+        break;
+    case "u":
+        break;
+    case "A":
+        break;
+    case "E":
+        break;
+    case "I":
+        break;
+    case "O":
+        break;
+    case "U":
+        break;
+    default:
+        result = false;
+    }
+    return result;
+}
+
+function deleteVowels(s)
+{
+    s.replaceAll("a","");
+    s.replaceAll("e","");
+    s.replaceAll("i","");
+    s.replaceAll("o","");
+    s.replaceAll("u","");
+    s.replaceAll("A","");
+    s.replaceAll("E","");
+    s.replaceAll("I","");
+    s.replaceAll("O","");
+    s.replaceAll("U","");
+    return s;
+}
+
+function countLetters(s)
+{
+    let count = 0;
+    for(let x of s)
+    {
+        if(isLetter(x))
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
+function frequentChar(s)
+{
+    let c = s.charAt(0);
+    let count = countCharacter(s,c);
+    for(let x of s)
+    {
+        if(x != c)
+        {
+            if(count < countCharacter(s,x))
+            {
+                c = x;
+                count = countCharacter(s,x);
+            }
+        }
+    }
+    return c;
+}
+
+function replaceFirstVowel(s)
+{
+    for(let x of s)
+    {
+        if(isVowel(x))
+        {
+            s.replace(x,"_")
+            break;
+        }
+    }
+    return s;
+}
+
+function countNonSpaces(s)
+{
+    let count = 0;
+    for(let x of s)
+    {
+        if(x != " ")
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
+function sumOfInt(s)
+{
+    let result = 0;
+    for(let x of s)
+    {
+        if(isNumber(x))
+        {
+            result += Number(x);
+        }
+    }
+    return result;
+}
+
+function findNonRepeating(s)
+{
+    let array = [];
+    for(let x of s)
+    {
+        if(countCharacter(s,x) == 1)
+        {
+            array.push(x);
+        }
+    }
+    console.log(array);
+}
+
+function sort(s)
+{
+    let array = [];
+    for(let x of s)
+    {
+        array.push(x);
+    }
+    array.sort();
+    let result = array.toString();
+    result.replaceAll(",","")
+    return result;
+}
+
+function reverseSort(s)
+{
+    let array = [];
+    for(let x of s)
+    {
+        array.push(x);
+    }
+    array.sort();
+    array.reverse();
+    let result = array.toString();
+    result.replaceAll(",","")
+    return result;
+}
